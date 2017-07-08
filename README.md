@@ -20,12 +20,13 @@ npm script helping to migrate a Ionic 2+ project to Ionic 3 lazy loading
 * Refactor page objects to strings
 `nav.setRoot('MyPage')` instead of `nav.setRoot(MyPage)` 
 * Create modules for components in folders named `components`
+* `pages` and `components` are recusively searched so your project layout can be folder-per-feature as well
 
 ## Customize
 
 The script uses template files with placeholders for generation and replacement. 
 
-E.g. After generating everything I discovered that I needed a custom pipe every page. 
+There are situations when you want to change them according to your needs. E.g. After generating everything I discovered that I needed a custom pipe every page. 
 Knowing this before I would have added the import to my `page.module.[ngx-translate].tpl.txt`
   
 * component.module.tpl.txt ... Module contents for components
@@ -37,6 +38,13 @@ If you like to use other folders than `pages` and `components` you have to chang
 
 See https://github.com/moberwasserlechner/ionic-lazy-loading-migration/blob/master/make-lazy-script/migrate-to-lazy-loading.js#L15-L16
 
+## Known issues
+
+In the cleanup step there are a few known issues because my regular expressions are not good enough. So if you are fluent with RegExp and care to improve I gladly accept PRs.
+
+I did some improvements lately but this might happen nevertheless
+* Functions including the class name. I had functions like `toLoginPage()` resulting in `to'LoginPage'()`
+* String page references might be double quoted. So if you have `nav.setRoot('LoginPage')` this will result in `nav.setRoot(''LoginPage'')`
 
 ## Run it
 
@@ -70,15 +78,6 @@ Easiest way is to run `ionic serve` open javascript console and wait for errors.
 * I had problems using Ionic's build in subcribe-publish Events. Most issues are fixed as soon as I added it to the list of providers in my `app.component.ts`. 
 In popovers its still not working. Have to ask that in the forum.
 
-### Known issues
-
-In the cleanup step there are a few known issues because my regular expressions are not good enought.
-So if you are fluent with RegExp and care to improve I gladly accept PRs.
-
-Problems might occur in:
-* Functions including the class name. I had functions like `toLoginPage()` resulting in `to'LoginPage'()`
-* String page references might be double quoted. So if you have `nav.setRoot('LoginPage')` this will result in `nav.setRoot(''LoginPage'')`
- 
 ### Links
 
 A few links which helped me upgrading.
