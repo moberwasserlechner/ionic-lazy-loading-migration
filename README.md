@@ -15,7 +15,7 @@ npm script helping to migrate a Ionic 2+ project to Ionic 3 lazy loading
 ## Features
 
 * Create modules for pages in folders named `pages`
-** ngx-translate import is included
+  * ngx-translate import is included by default
 * Remove unnecessary imports
 * Refactor page objects to strings
 `nav.setRoot('MyPage')` instead of `nav.setRoot(MyPage)` 
@@ -35,7 +35,7 @@ Knowing this before I would have added the import to my `page.module.[ngx-transl
 
 If you like to use other folders than `pages` and `components` you have to change the variables controlling it.
 
-See https://github.com/git/git/blob/master/make-lazy-script/migrate-to-lazy-loading.js#L15-L16
+See https://github.com/moberwasserlechner/ionic-lazy-loading-migration/blob/master/make-lazy-script/migrate-to-lazy-loading.js#L15-L16
 
 
 ## Run it
@@ -69,5 +69,3 @@ So I you are fluent with RegExp and care to improve I gladly accept PRs.
 
 * Functions including the class name will be destroyed. I had functions like `toLoginPage()` resulting in `to'LoginPage'()`
 * String page references are quoted as well. So if you have `nav.setRoot('LoginPage')` this will result in `nav.setRoot(''LoginPage'')` 
-
-
