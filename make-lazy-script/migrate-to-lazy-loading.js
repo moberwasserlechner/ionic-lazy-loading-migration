@@ -182,11 +182,14 @@ if (files.length > 0) {
 
         for (let classHolder of classes) {
           if (f === classHolder.path) {
-            // console.debug("File of class "+classHolder.name+" will be skipped");
             continue;
           }
-          replaced = replaced.replace(new RegExp("^.*import {"+classHolder.name+"} from .*$", 'mg'), "");
-          replaced = replaced.replace(new RegExp(classHolder.name, 'g'), "'"+classHolder.name+"'");
+
+          replaced = replaced.replace(new RegExp(".*import { *"+classHolder.name+" *} from .*", 'mg'), "");
+
+          replaced = replaced.replace(new RegExp("\\("+classHolder.name, 'g'), "('"+classHolder.name+"'");
+          replaced = replaced.replace(new RegExp(" "+classHolder.name, 'g'), " '"+classHolder.name+"'");
+          replaced = replaced.replace(new RegExp("="+classHolder.name, 'g'), "='"+classHolder.name+"'");
         }
 
         if (original !== replaced) {
