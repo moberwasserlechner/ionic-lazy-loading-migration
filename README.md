@@ -84,3 +84,5 @@ A few links which helped me upgrading.
 
 * Before starting I asked [this question](https://forum.ionicframework.com/t/start-an-app-with-lazy-loading/96780)
 * [ngx-translate](https://forum.ionicframework.com/t/ngx-translate-and-ionic-3/87005/24)
+* Ionic Blog [part 1](http://blog.ionic.io/ionic-and-lazy-loading-pt-1/) and [part 2](http://blog.ionic.io/ionic-and-lazy-loading-pt-2/)
+* https://ionicacademy.com/ionic-3-lazy-loading/
