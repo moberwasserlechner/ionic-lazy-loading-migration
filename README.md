@@ -43,14 +43,14 @@ See https://github.com/moberwasserlechner/ionic-lazy-loading-migration/blob/mast
 The script runs a simulation by default until you provide a cli argument and start it without simulation.
 
 ```
-npm run tc:migrate-to-lazy
+npm run migrate-to-lazy
 ```
 
 
 ### CLI Arguments
 
 ```
-npm run tc:migrate-to-lazy <PUT_THE_ARGUMENTS_HERE>
+npm run migrate-to-lazy <PUT_THE_ARGUMENTS_HERE>
 ```
 
 * dont-simulate ... Please be careful or use a scm to be able to revert changes :)
@@ -60,12 +60,20 @@ npm run tc:migrate-to-lazy <PUT_THE_ARGUMENTS_HERE>
 * exclude-components ... Excludes generating custom component modules
 * no-ngx-translate ... If you do not want to include the ngx-translate module in every page module
 
-### Manual steps / known issues
+### Manual steps
 
-After running the script you have to check if everything was done correctly.
+After running the script you have to do at least this manual steps.
 
-In the cleanup step there are a few known issues because my regular expressions are generous. 
-So I you are fluent with RegExp and care to improve I gladly accept PRs.
+* Go to app.module.ts and remove the pages and components. File will be broken after script run.
+* Import needed modules in your page module files. 
+Easiest way is to run `ionic serve` open javascript console and wait for errors.
 
-* Functions including the class name will be destroyed. I had functions like `toLoginPage()` resulting in `to'LoginPage'()`
-* String page references are quoted as well. So if you have `nav.setRoot('LoginPage')` this will result in `nav.setRoot(''LoginPage'')` 
+### Known issues
+
+In the cleanup step there are a few known issues because my regular expressions are not good enought.
+So if you are fluent with RegExp and care to improve I gladly accept PRs.
+
+Problems might occur in:
+* Functions including the class name. I had functions like `toLoginPage()` resulting in `to'LoginPage'()`
+* String page references might be double quoted. So if you have `nav.setRoot('LoginPage')` this will result in `nav.setRoot(''LoginPage'')`
+ 
