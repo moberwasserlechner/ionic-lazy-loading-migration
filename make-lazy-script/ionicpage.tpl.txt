@@ -1,0 +1,4 @@
+import {IonicPage} from "ionic-angular";
+
+@IonicPage()
+@Component({

@@ -1,0 +1,10 @@
+import { NgModule } from '@angular/core';
+import {IonicModule} from "ionic-angular";
+import { LAZY-CLASSNAME-PLACEHOLDER } from './LAZY-FILENAME-PLACEHOLDER';
+
+@NgModule({
+  declarations: [LAZY-CLASSNAME-PLACEHOLDER],
+  imports: [IonicModule],
+  exports: [LAZY-CLASSNAME-PLACEHOLDER]
+})
+export class LAZY-CLASSNAME-PLACEHOLDERModule { }
