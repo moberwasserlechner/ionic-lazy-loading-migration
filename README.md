@@ -67,6 +67,8 @@ After running the script you have to do at least this manual steps.
 * Go to app.module.ts and remove the pages and components. File will be broken after script run.
 * Import needed modules in your page module files. 
 Easiest way is to run `ionic serve` open javascript console and wait for errors.
+* I had problems using Ionic's build in subcribe-publish Events. Most issues are fixed as soon as I added it to the list of providers in my `app.component.ts`. 
+In popovers its still not working. Have to ask that in the forum.
 
 ### Known issues
 
