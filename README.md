@@ -53,7 +53,7 @@ npm run migrate-to-lazy
 npm run migrate-to-lazy <PUT_THE_ARGUMENTS_HERE>
 ```
 
-* dont-simulate ... Please be careful or use a scm to be able to revert changes :)
+* dont-simulate ... Please be **careful** and use a **scm** to be able to **revert changes**!
 * log-contents ... You will see the contents of created and changed files
 * exclude-pages ... Excludes generating page modules
 * exclude-page-cleanup ... Excludes generating clean up imports and replacing page references with strings
@@ -79,3 +79,9 @@ Problems might occur in:
 * Functions including the class name. I had functions like `toLoginPage()` resulting in `to'LoginPage'()`
 * String page references might be double quoted. So if you have `nav.setRoot('LoginPage')` this will result in `nav.setRoot(''LoginPage'')`
  
+### Links
+
+A few links which helped me upgrading.
+
+* Before starting I asked [this question](https://forum.ionicframework.com/t/start-an-app-with-lazy-loading/96780)
+* [ngx-translate](https://forum.ionicframework.com/t/ngx-translate-and-ionic-3/87005/24)
