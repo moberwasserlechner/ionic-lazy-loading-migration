@@ -26,7 +26,7 @@ npm script helping to migrate a Ionic 2+ project to Ionic 3 lazy loading
 
 The script uses template files with placeholders for generation and replacement. 
 
-There are situations when you want to change them according to your needs. E.g. After generating everything I discovered that I needed a custom pipe every page. 
+There are situations when you want to change them according to your needs. E.g. After generating everything I discovered that I needed a custom pipe in every page. 
 Knowing this before I would have added the import to my `page.module.[ngx-translate].tpl.txt`
   
 * component.module.tpl.txt ... Module contents for components
