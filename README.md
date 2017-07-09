@@ -72,11 +72,12 @@ npm run migrate-to-lazy <PUT_THE_ARGUMENTS_HERE>
 
 After running the script you have to do at least this manual steps.
 
-* Go to app.module.ts and remove the pages and components. File will be broken after script run.
-* Import needed modules in your page module files. 
+* Upgrade to Ionic 3 if you didn't do so already!
+* Go to `app.module.ts` and remove the pages and components. File will be broken after script run.
+* Import needed modules in your **page** module and **component** module files. 
 Easiest way is to run `ionic serve` open javascript console and wait for errors.
-* I had problems using Ionic's build in subcribe-publish Events. Most issues are fixed as soon as I added it to the list of providers in my `app.component.ts`. 
-In popovers its still not working. Have to ask that in the forum.
+* I had problems using Ionic's build in subcribe-publish [Events](https://ionicframework.com/docs/api/util/Events/). 
+Most issues are fixed as soon as I added it to the list of providers in my `app.component.ts`. But in Popovers it's still not working. I will ask that on the forum.
 
 ### Links
 
